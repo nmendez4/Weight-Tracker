@@ -23,7 +23,7 @@ mongoose.connect(MONGODB_URI, {
 });
 
 // routes
-app.use(require("./routes/api.js"));
+app.use(require("./routes/api"));
 
 // terminal log to show app is running
 app.listen(PORT, () => {
