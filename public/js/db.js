@@ -51,7 +51,7 @@ function checkDatabase() {
                     "Content-Type": "application/json"
                 }
             })
-            .then((response) => respionse.json())
+            .then((response) => response.json())
             .then(() => {
                 const change = db.change("pending", "readwrite");
                 const store = change.objectStore("pending");
