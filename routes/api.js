@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const Change = require("../models/change.js");
+const Change = require("../models/change");
 
-router.post("/api/change", ({bosy}, res) => {
+router.post("/api/change", ({body}, res) => {
     Change.create(body)
     .then(dbChange => {
         res.json(dbChange);

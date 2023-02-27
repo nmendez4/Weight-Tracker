@@ -16,8 +16,8 @@ fetch("/api/change")
 
 function populateTotal() {
     // reduce change amounts to a single total value
-    let total = changes.reduce((total, c) => {
-        return total + parseInt(c.value);
+    let total = changes.reduce((total, t) => {
+        return total + parseInt(t.value);
     }, 0);
 
     let totalEl = document.querySelector("#total");
@@ -25,12 +25,12 @@ function populateTotal() {
 }
 
 function populateTable() {
-    let cbody = document.querySelector("#cbody");
-    cbody.innerHTML = "";
+    let tbody = document.querySelector("#tbody");
+    tbody.innerHTML = "";
 
     changes.forEach(change => {
         // create and populate a table row
-        let ch = document.createElement("ch");
+        let ch = document.createElement("tr");
         ch.innerHTML = `
         <td>${change.name}</td>
         <td>${change.value}<td>
@@ -46,14 +46,14 @@ function populateChart() {
     let sum = 0;
 
     // create date labels for chart
-    let labels = reversed.map(c => {
+    let labels = reversed.map(t => {
         let date = new Date(t.date);
         return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
     });
 
     //create incremental values for chart
-    let data = reversed.map(c => {
-        sum += parseInt(c.value);
+    let data = reversed.map(t => {
+        sum += parseInt(t.value);
         return sum;
     });
 
@@ -64,7 +64,7 @@ function populateChart() {
 
     let ctx = document.getElementById("myChart").getContext("2d");
 
-    myChart = new CharacterData(ctx, {
+    myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels,
@@ -79,8 +79,8 @@ function populateChart() {
 }
 
 function sendChange(isAdding) {
-    let nameEl = document.querySelector("#c-name");
-    let amountEl = document.querySelector("#c-amount");
+    let nameEl = document.querySelector("#t-name");
+    let amountEl = document.querySelector("#t-amount");
     let errorEl = document.querySelector(".form .error");
 
     //validate form
