@@ -36,7 +36,7 @@ function populateTable() {
         <td>${change.value}<td>
         `;
 
-        cbody.appendChild(ch);
+        tbody.appendChild(ch);
     });
 }
 
