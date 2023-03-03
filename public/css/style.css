@@ -49,3 +49,9 @@ tr:nth-child(even) {
     width: 90%;
     margin: 0 auto;
 }
+
+footer p {
+    margin-bottom: 5px;
+    text-align: center;
+    position: bottom;
+}
