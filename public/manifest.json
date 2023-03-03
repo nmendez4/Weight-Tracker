@@ -4,12 +4,12 @@
     "icons": [
         {
             "src": "icons8-weight-care-50.png",
-            "sizes": "50x50",
+            "sizes": "50",
             "type": "image/png"
         },
         {
             "src": "icons8-weight-care-100.png",
-            "sizes": "100x100",
+            "sizes": "100",
             "type": "image/png"
         }
     ],
