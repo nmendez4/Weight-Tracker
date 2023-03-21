@@ -22,7 +22,7 @@ mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true
 });
 
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', false);
 
 // routes
 app.use(require("./routes/api"));
